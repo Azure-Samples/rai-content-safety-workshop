@@ -1,57 +1,31 @@
-# Project Name
+# RAI: Content Safety Workshop
 
-(short, 1-3 sentenced, description of the project)
+In this workshop you will learn how to use the prebuilt AI service, Azure Safety Content, in your applications to ensure that the texts or images that are sent to the user or the user enters do not contain data that has violence, self-harm, hate or sexual information.
 
-## Features
+_This workshop is part of a series focused on building developer awareness and hands-on experience with Responsible AI principles and practices. See the [Responsible AI Hub](https://aka.ms/rai-hub/website) for details_.
 
-This project framework provides the following features:
+## Learning Objectives
 
-* Feature 1
-* Feature 2
-* ...
+At the end of the workshop you will learn how to:
+
+* Detect and flag text that are unsuitable for end-users.
+* Block images that are inappropriate.
+* Create applications with a safe and friendly tone.
+
+## Prerequisites
+
+The Content Safety API can be used in different programming languages. For this lab, we’ll be using Python.
+-	Basic knowledge of Python.
+-	Login or sign up for a [Free Azure account](https://azure.microsoft.com/free/).
+-	Install [Visual Studio Code](https://code.visualstudio.com/Download "Visual Studio Code")
+
 
 ## Getting Started
 
-### Prerequisites
+The workshop consists of the following exercises:
+1. Create an instance of Azure Content Safety
+2. Launch Project GitHub codespaces
+3. Analyze Text
+4. Analyze Images
 
-(ideally very short, if any)
-
-- OS
-- Library version
-- ...
-
-### Installation
-
-(ideally very short)
-
-- npm install [package name]
-- mvn install
-- ...
-
-### Quickstart
-(Add steps to get up and running quickly)
-
-1. git clone [repository clone url]
-2. cd [repository name]
-3. ...
-
-
-## Demo
-
-A demo app is included to show how to use the project.
-
-To run the demo, follow these steps:
-
-(Add steps to start up the demo)
-
-1.
-2.
-3.
-
-## Resources
-
-(Any additional resources or related projects)
-
-- Link to supporting information
-- Link to similar sample
-- ...
+Ready to get started? [Click here](docs/README.md) to go to the step-by-step tutorial.
