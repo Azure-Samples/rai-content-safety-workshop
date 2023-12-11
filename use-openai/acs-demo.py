@@ -1,7 +1,8 @@
 
-import openai
+from openai import AzureOpenAI
 import os
 import json
+from dotenv import load_dotenv
 from azure.ai.contentsafety import ContentSafetyClient
 from azure.core.credentials import AzureKeyCredential
 from azure.core.exceptions import HttpResponseError
@@ -9,11 +10,7 @@ from azure.ai.contentsafety.models import AnalyzeTextOptions
 from azure.ai.contentsafety.models import AnalyzeImageOptions, ImageData
 
 
-openai.api_type = "azure"
-openai.api_base = os.getenv("AZURE_OPENAI_ENDPOINT") 
-openai.api_version = "2023-05-15"
-openai.api_key = os.getenv("AZURE_OPENAI_KEY")
-deployment_name = "gpt-35-turbo-test"
+
 
 user_prompt = "What is John's job in the movie John Wick?"
 
@@ -27,11 +24,19 @@ def get_safety_classification(response):
     if response.violence_result:
         print(f"Violence severity: {response.violence_result.severity}")
 
-response = openai.ChatCompletion.create(
-    engine= deployment_name,
+
+client = AzureOpenAI(
+  azure_endpoint = os.environ["AZURE_OPENAI_ENDPOINT"], 
+  api_key=os.environ["AZURE_OPENAI_KEY"],  
+  api_version="2023-07-01"
+)
+
+response = client.chat.completions.create(
+    model="get54TurboDply", # model = "deployment_name".
     messages=[
         {"role": "system", "content": "You are a helpful assistant."},
         {"role": "user", "content": f'{user_prompt}'},
+
     ]
 )
 

@@ -24,8 +24,11 @@ dependencies:
     - keyrings.alt
     - azure-ai-ml
     - azure-cli
+    - azure-core
     - azureml-core
+    - openai=0.28.1
     - azure-ai-contentsafety>=1.0.0b1
+    - python-dotenv
     - pytest
     - flask>=2.2.3  
 
