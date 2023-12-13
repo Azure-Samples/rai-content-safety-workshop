@@ -10,6 +10,9 @@ param chatGptModelVersion string = '0613'
 param embeddingDeploymentCapacity int = 5
 param chatGptDeploymentCapacity int = 5
 
+param csExists bool = false
+param openaiExists bool = false
+
 @description('Display name of GPT-35-Turbo deployment')
 param gpt35TurboDeploymentName string
 
@@ -44,7 +47,7 @@ param embeddingDeploymentName string
 param location string
 
 param oaSKU string = 'S0'
-resource account1 'Microsoft.CognitiveServices/accounts@2022-03-01' = {
+resource account1 'Microsoft.CognitiveServices/accounts@2022-03-01' = if (!openaiExists) {
   name: openaiName
   location: location
   kind: 'OpenAI'
@@ -57,7 +60,7 @@ resource account1 'Microsoft.CognitiveServices/accounts@2022-03-01' = {
 }
 
 param csSKU string = 'S0'
-resource contentsafetyaccount 'Microsoft.CognitiveServices/accounts@2022-03-01' = {
+resource contentsafetyaccount 'Microsoft.CognitiveServices/accounts@2022-03-01' = if (!csExists) {
   name: contentsafetyName
   location: location
   kind: 'ContentSafety'
@@ -71,7 +74,7 @@ resource contentsafetyaccount 'Microsoft.CognitiveServices/accounts@2022-03-01' 
 
 
 
-resource gptDeployment 'Microsoft.CognitiveServices/accounts/deployments@2023-05-01' =  {
+resource gptDeployment 'Microsoft.CognitiveServices/accounts/deployments@2023-05-01' = {
   parent: account1
   name: gpt35TurboDeploymentName
   properties: {
@@ -85,10 +88,11 @@ resource gptDeployment 'Microsoft.CognitiveServices/accounts/deployments@2023-05
     name: 'Standard'
     capacity: chatGptDeploymentCapacity
   }
+
 }
 
 
-resource embedDeployment 'Microsoft.CognitiveServices/accounts/deployments@2023-05-01' =  {
+resource embedDeployment 'Microsoft.CognitiveServices/accounts/deployments@2023-05-01' = {
   parent: account1
   name: embeddingDeploymentName
   properties: {
