@@ -104,14 +104,5 @@ resource embedDeployment 'Microsoft.CognitiveServices/accounts/deployments@2023-
   ]
 }
 
-output openAIServiceName string = openaiName
-output gptDeploymentName string =  gpt35TurboDeploymentName
-output textEmbedDeploymentName string = embeddingDeploymentName 
+output 'Successfully created Azure resources'
 
-output openAiApiEndpoint string = account1.properties.endpoint
-#disable-next-line outputs-should-not-contain-secrets 
-output openAiApiKey string = account1.listKeys().key1
-
-output contentsafetyEndpoint string = contentsafetyaccount.properties.endpoint
-#disable-next-line outputs-should-not-contain-secrets 
-output contentsafetyApiKey string = contentsafetyaccount.listKeys().key1
