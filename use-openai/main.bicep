@@ -23,24 +23,24 @@ param embeddingDeploymentName string
 @allowed([
   'australiaeast'
   'brazilsouth'
-  'canadacentral'
+  'canadaeast'
   'centralus'
   'eastasia'
   'eastus'
   'eastus2'
   'francecentral'
   'japaneast'
-  'koreacentral'
   'northcentralus'
   'northeurope'
   'southeastasia'
   'southcentralus'
+  'switzerlandnorth'
+  'swedencentral'
   'uksouth'
   'westcentralus'
   'westus'
   'westus2'
   'westeurope'
-  'usgovvirginia'
 ])
 param location string
 
