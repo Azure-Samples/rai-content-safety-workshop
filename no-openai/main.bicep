@@ -43,4 +43,5 @@ resource contentsafetyaccount 'Microsoft.CognitiveServices/accounts@2022-03-01' 
 }
 
 output contentsafetyEndpoint string = contentsafetyaccount.properties.endpoint
+#disable-next-line outputs-should-not-contain-secrets
 output contentsafetyApiKey string = contentsafetyaccount.listKeys().key1

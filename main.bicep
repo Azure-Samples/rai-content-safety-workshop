@@ -104,5 +104,5 @@ resource embedDeployment 'Microsoft.CognitiveServices/accounts/deployments@2023-
   ]
 }
 
-output 'Successfully created Azure resources'
+
 
