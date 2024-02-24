@@ -4,28 +4,27 @@ param contentsafetyName string
 @description('Specifies the location of the Azure Machine Learning workspace and dependent resources.')
 @allowed([
   'australiaeast'
-  'brazilsouth'
   'canadaeast'
-  'centralus'
-  'eastasia'
   'eastus'
   'eastus2'
   'francecentral'
   'japaneast'
-  'northcentralus'
-  'northeurope'
-  'southeastasia'
   'southcentralus'
   'switzerlandnorth'
   'swedencentral'
   'uksouth'
   'westcentralus'
   'westus'
-  'westus2'
   'westeurope'
 ])
 param location string
 
+param oldRegion array = [
+  'westeurope' 
+  'francecentral'
+  'southcentralus'
+  ]
+param chatGptModelVersion string = contains(oldRegion, location) ? '0301' : '0613' 
 
 param csSKU string = 'S0'
 resource contentsafetyaccount 'Microsoft.CognitiveServices/accounts@2022-03-01' = {
