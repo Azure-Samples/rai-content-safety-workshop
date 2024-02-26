@@ -11,7 +11,6 @@ param contentsafetyName string
   'japaneast'
   'southcentralus'
   'switzerlandnorth'
-  'swedencentral'
   'uksouth'
   'westcentralus'
   'westus'

@@ -19,25 +19,17 @@ param embeddingDeploymentName string
 @description('Specifies the location of the Azure Machine Learning workspace and dependent resources.')
 @allowed([
   'australiaeast'
-  'brazilsouth'
-  'canadacentral'
-  'centralus'
-  'eastasia'
+  'canadaeast'
   'eastus'
   'eastus2'
   'francecentral'
   'japaneast'
-  'koreacentral'
-  'northcentralus'
-  'northeurope'
-  'southeastasia'
   'southcentralus'
+  'switzerlandnorth'
   'uksouth'
   'westcentralus'
   'westus'
-  'westus2'
   'westeurope'
-  'usgovvirginia'
 ])
 param location string
 

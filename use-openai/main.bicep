@@ -28,7 +28,6 @@ param embeddingDeploymentName string
   'japaneast'
   'southcentralus'
   'switzerlandnorth'
-  'swedencentral'
   'uksouth'
   'westcentralus'
   'westus'
