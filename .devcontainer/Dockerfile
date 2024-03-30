@@ -12,7 +12,7 @@ RUN conda install -n base -c conda-forge mamba
 RUN echo "pip install azure-cli" | bash
 #Choose your version of ml cli
 RUN echo "az extension add -n ml" | bash 
-RUN echo "pip install azure-ml==0.0.139 --extra-index-url https://azuremlsdktestpypi.azureedge.net/sdk-cli-v2" | bash
+RUN echo "pip install azure-ml --extra-index-url https://azuremlsdktestpypi.azureedge.net/sdk-cli-v2" | bash
 
 
 # This is to support updating conda environment with user supplied packages with environment.yml
