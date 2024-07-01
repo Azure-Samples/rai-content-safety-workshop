@@ -1,3 +1,5 @@
+**UPDATE**: *This repository is archived effective July 1, 2024. For Responsible AI resources, visit [aka.ms/rai-collection](https://aka.ms/rai-collection).*
+
 # RAI: Content Safety Workshop
 
 In this workshop you will learn how to use the prebuilt AI service, Azure Safety Content, in your applications to ensure that the texts or images that are sent to the user or the user enters do not contain data that has violence, self-harm, hate or sexual information.
